@@ -1,6 +1,26 @@
-# Jangan bagi rahsia ni terlepas ke GitHub Public/Private
-node_modules/
-.firebase/
-.env
+# --- KETICK HUB SECURITY GUARD ---
+
+# Firebase Secrets (Sangat Rahsia)
 serviceAccountKey.json
-*.log
+.firebase/
+firebase.debug.log
+firestore.indexes.json
+firestore.rules
+
+# Frontend API Secrets (Masking Protocol)
+public/firebase-config.json
+
+# Environment Variables & Local Config
+.env
+.env.local
+config.js
+
+# Dependencies & Runtime Logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+
+# Deployment Archives
+/vault/deployments/*.json
