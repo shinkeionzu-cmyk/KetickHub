@@ -1,1 +1,97 @@
-.gitkeep
+:root {
+    --bg: #0f111a;
+    --card: #1a1d2e;
+    --accent: #00d2ff;
+    --danger: #ff4757;
+    --text: #e0e0e0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+.main-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2a2d3e;
+}
+
+.logo span { color: var(--accent); font-weight: bold; }
+
+.overview-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+}
+
+.card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #2a2d3e;
+}
+
+.card.alert { border-color: var(--danger); }
+.card h3 { font-size: 2rem; margin: 10px 0 0 0; }
+
+.client-monitor { padding: 0 20px; }
+
+.list-container {
+    margin-top: 15px;
+}
+
+.client-item {
+    background: var(--card);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-active { color: #2ed573; font-weight: bold; font-size: 0.8rem; }
+.status-locked { color: var(--danger); font-weight: bold; font-size: 0.8rem; }
+
+.btn-manage {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+/* --- LOGIK ANTI-FRAUD & ANIMASI --- */
+@keyframes blinker {
+    50% { opacity: 0.3; }
+}
+
+.alert-badge {
+    background: var(--danger);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.6rem;
+    animation: blinker 1s linear infinite;
+    font-weight: bold;
+}
+
+.fraud-item.critical {
+    border-left: 5px solid var(--danger);
+    background: rgba(255, 71, 87, 0.1);
+}
+
+.audit-log-container {
+    margin-top: 20px;
+    border-top: 1px solid #2a2d3e;
+    padding-top: 15px;
+}
+
