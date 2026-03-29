@@ -1,0 +1,26 @@
+name: Register New Client
+on:
+  push:
+    paths:
+      - 'factory/manual_inject.js' # Robot ni hanya jalan kalau kau usik fail ni
+
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install firebase-admin
+
+      - name: Create Secret Key File
+        # Pastikan kau dah masukkan FIREBASE_SERVICE_ACCOUNT_KETICKHUB dalam GitHub Secrets
+        run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_KETICKHUB }}' > serviceAccountKey.json
+
+      - name: Run Manual Inject
+        run: node factory/manual_inject.js
