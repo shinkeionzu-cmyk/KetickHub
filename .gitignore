@@ -1,0 +1,6 @@
+# Jangan bagi rahsia ni terlepas ke GitHub Public/Private
+node_modules/
+.firebase/
+.env
+serviceAccountKey.json
+*.log
