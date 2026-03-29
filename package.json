@@ -1,0 +1,11 @@
+{
+  "name": "ketick-hub",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'No build step needed for plain HTML'"
+  },
+  "dependencies": {
+    "firebase-admin": "^11.0.0",
+    "firebase-functions": "^4.0.0"
+  }
+}
