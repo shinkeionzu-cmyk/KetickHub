@@ -38,3 +38,34 @@ deployments DEPLOY-ID-123 client_name, system_type, key, status Rekod siapa yang
 audit_logs (Auto ID) event, deployment_id, staff_id, time Rekod Hitam (Anti-Fraud).
 war_room_notes (Auto ID) title, content, category, date Nota strategi dari Meja Meeting anda.
 
+# 📝 LOG MESYUARAT STRATEGIK KETICK HUB
+
+## [2026-03-29] - SESI 1: PEMBINAAN MOTHERSHIP & PROTOKOL API
+**Peserta:** Master Admin (AzlanMymo) & AI Architect (Gemini)
+
+### 1. KEPUTUSAN STRUKTUR FOLDER
+- Telah menetapkan struktur **Unified KETICK HUB** yang menggabungkan:
+  - `war_room` (Strategi)
+  - `vault` (Almari Armor/Produk)
+  - `factory` (Kilang Pautan/Generator)
+  - `core` (Enjin Keselamatan/Gatekeeper)
+  - `public` (Dashboard Kawalan)
+
+### 2. PROTOKOL KESELAMATAN (API MASKING)
+- **Keputusan:** API Key Firebase TIDAK akan di-hardcode dalam `app.js`.
+- **Implementasi:** Menggunakan fail `public/firebase-config.json` yang diasingkan.
+- **Git Guard:** Fail tersebut wajib dimasukkan dalam `.gitignore` bersama `serviceAccountKey.json`.
+- **Sebab:** Mengelakkan kebocoran identiti projek di GitHub (Private/Public).
+
+### 3. LOGIK KELAHIRAN SISTEM (GENERATOR)
+- Setiap sistem anak (Mark-OS, dsb) akan dijana melalui `factory/generator.js`.
+- Data akan disimpan secara 'Dual-Log': 
+  - **Local:** Folder `vault/deployments` (JSON).
+  - **Cloud:** Firebase Firestore (Live Sync).
+
+### 4. ARAHAN SETERUSNYA (TO-DO)
+- [ ] Memantapkan fungsi **Anti-Fraud (Staff Tracking)**.
+- [ ] Menyediakan 'Kill-Switch' yang lebih agresif dari Dashboard.
+- [ ] Persediaan UI Flutter untuk akses Android/iOS.
+
+
