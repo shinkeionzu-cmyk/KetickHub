@@ -1,0 +1,8 @@
+{
+  "system_id": "MARK-01-OS",
+  "name": "KetickOS",
+  "version": "1.0.0",
+  "modules": ["Billing", "Inventory", "CRM"],
+  "premium": ["WhatsApp-Autopilot", "Anti-Fraud-Sync"],
+  "handshake_period": "30_days"
+}
